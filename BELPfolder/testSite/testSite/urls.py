@@ -35,9 +35,9 @@ urlpatterns += {
     path('listings/', include ('listings.urls'))
 }
 
-#changed default from catalof to listings
+#changed default from catalog to listings
 urlpatterns += [
-    path('', RedirectView.as_view(url = 'listing/', permanent = True)),
+    path('', RedirectView.as_view(url = 'listings/', permanent = True)),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root = settings.STATIC_ROOT)
