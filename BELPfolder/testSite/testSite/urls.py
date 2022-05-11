@@ -32,12 +32,12 @@ urlpatterns = [
 # BELP ADDITIONS
 
 urlpatterns += {
-    path('listings/', include ('listings.urls'))
+    path('listing/', include ('listing.urls'))
 }
 
-#changed default from catalog to listings
+#changed default from catalog to listing
 urlpatterns += [
-    path('', RedirectView.as_view(url = 'listings/', permanent = True)),
+    path('', RedirectView.as_view(url = 'listing/', permanent = True)),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root = settings.STATIC_ROOT)
