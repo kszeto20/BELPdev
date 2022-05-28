@@ -35,7 +35,6 @@ urlpatterns += {
     path('listing/', include ('listing.urls'))
 }
 
-#changed default from catalog to listing
 urlpatterns += [
     path('', RedirectView.as_view(url = 'listing/', permanent = True)),
 ]

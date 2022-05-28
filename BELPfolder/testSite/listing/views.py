@@ -12,9 +12,13 @@ def index(request):
         }
     return render(request, 'index.html', context = context)
 
-# if you change index.html to bathroom_list.html the bathroom html will display instead of index. """
-# When I make another function, I am not able to hav ethe program find the bathroom_list.html properly... it looks for it in listing/listingx
 # Create your views here.
 
 class BathroomListView(generic.ListView):
     model = Bathroom
+    context_object_name = 'bathroom_list'
+    template_name = 'bathroom_list.html'
+
+class BathroomDetailView(generic.DetailView):
+    model = Bathroom
+    template_name = 'bathroom_detail.html'

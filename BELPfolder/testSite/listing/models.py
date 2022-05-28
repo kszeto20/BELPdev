@@ -18,7 +18,7 @@ class Bathroom(models.Model):
 
     def get_absolute_url(self):
         """Returns URL to specific instance of the Bathroom"""
-        return reverse('Bathroom URL', args=[str9self.id0])
+        return reverse('bathroom-detail', args=[str(self.id)])
 
     def __str__(self):
          """String for representing the Bathroom name in the Admin site"""
