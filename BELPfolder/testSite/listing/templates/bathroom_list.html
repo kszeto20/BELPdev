@@ -1,0 +1,16 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Bathroom List</h1>
+  {% if bathroom_list %}
+  <ul>
+    {% for bathroom in bathroom_list %}
+      <li>
+        bathNum: {{bathroom.bathNum}} <a href="{{ bathroom.get_absolute_url }}">{{ bathroom.location }}</a> Size: ({{bathroom.size}})
+      </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>There are no bathrooms.</p>
+  {% endif %}
+{% endblock %}
