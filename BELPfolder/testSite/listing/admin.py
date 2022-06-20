@@ -9,8 +9,8 @@ class BathroomAdmin(admin.ModelAdmin):
     list_filter = ('size', 'cleanliness')
 
     fieldsets = (
-        (None, { 'fields' : ('bathNum', 'location')}),
-        ('Ratings', { 'fields': ('size', 'cleanliness')}),
+        ('Information', { 'fields' : ('bathNum', 'location', 'gender')}),
+        ('Ratings', { 'fields': ('size', 'cleanliness', 'comments', 'rating')}),
 
     )
 
