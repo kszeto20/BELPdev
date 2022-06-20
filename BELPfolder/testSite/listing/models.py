@@ -1,6 +1,26 @@
 from django.db import models
 from django.urls import reverse
 
+GENDER_CHOICES = (
+    ('male','MALE'),
+    ('female', 'FEMALE'),
+    ('unisex', 'UNISEX')
+)
+
+RATING_NUMBERS = (
+    (1,'1')
+    (2,'2')
+    (3,'3')
+    (4,'4')
+    (5,'5')
+    (6,'6')
+    (7,'7')
+    (8,'8')
+    (9,'9')
+    (10,'10')
+)
+
+
 class Bathroom(models.Model):
     """Bathroom Model"""
 
@@ -9,13 +29,15 @@ class Bathroom(models.Model):
 
     size = models.IntegerField(max_length=10, help_text='Enter how many stalls there are')
 
-    cleanliness = models.IntegerField(max_length=10, default=5, help_text='Rate the cleanliness of the bathroom on a scale of 1 to 10')
+    cleanliness = models.IntegerField(max_length=2, default=5, choices=RATING_NUMBERS)
 
     bathNum = models.IntegerField(max_length=1000, default=1000, help_text='Enter the bathroomID')
 
-    gender = models.CharField(max_length=10, default='Unisex', help_text='Enter Male, Female, or Unisex')
+    gender = models.CharField(max_length=6, choices =GENDER_CHOICES, default='Unisex')
 
-    Comments = models.CharField(max_length=250,default='No comments were made about this bathroom', help_text= "Enter a brief description your experience in the bathroom.  Please include any negatives or positives that occured")
+    comments = models.CharField(max_length=250,default='No comments were made about this bathroom.', help_text= "Enter a brief description of your experience in the bathroom.  Please include any negatives or positives")
+    
+    rating = models.IntegerField(max_length=2, default=5, choices=RATING_NUMBERS)
 
     class Meta:
         ordering = ['bathNum', 'location', '-size', '-cleanliness', 'gender']
