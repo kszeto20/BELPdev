@@ -13,8 +13,12 @@ class Bathroom(models.Model):
 
     bathNum = models.IntegerField(max_length=1000, default=1000, help_text='Enter the bathroomID')
 
+    gender = models.CharField(max_length=10, default='Unisex', help_text='Enter Male, Female, or Unisex')
+
+    Comments = models.CharField(max_length=250,default='No comments were made about this bathroom', help_text= "Enter a brief description your experience in the bathroom.  Please include any negatives or positives that occured")
+
     class Meta:
-        ordering = ['bathNum', 'location', '-size', '-cleanliness']
+        ordering = ['bathNum', 'location', '-size', '-cleanliness', 'gender']
 
     def get_absolute_url(self):
         """Returns URL to specific instance of the Bathroom"""
