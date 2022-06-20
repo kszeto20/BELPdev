@@ -8,17 +8,18 @@ GENDER_CHOICES = (
 )
 
 RATING_NUMBERS = (
-    (1,'1')
-    (2,'2')
-    (3,'3')
-    (4,'4')
-    (5,'5')
-    (6,'6')
-    (7,'7')
-    (8,'8')
-    (9,'9')
+    (1,'1'),
+    (2,'2'),
+    (3,'3'),
+    (4,'4'),
+    (5,'5'),
+    (6,'6'),
+    (7,'7'),
+    (8,'8'),
+    (9,'9'),
     (10,'10')
 )
+
 
 
 class Bathroom(models.Model):
@@ -27,7 +28,7 @@ class Bathroom(models.Model):
     # Fields
     location = models.CharField(max_length=1000, default='A Bathroom', help_text='Enter the bathroom location (e.g. Elmhurst Park Bathroom)')
 
-    size = models.IntegerField(max_length=10, help_text='Enter how many stalls there are')
+    size = models.IntegerField(max_length=2, choices=RATING_NUMBERS, default=3)
 
     cleanliness = models.IntegerField(max_length=2, default=5, choices=RATING_NUMBERS)
 
