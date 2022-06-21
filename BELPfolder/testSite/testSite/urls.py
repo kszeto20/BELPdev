@@ -34,10 +34,6 @@ urlpatterns = [
 urlpatterns += {
     path('listing/', include ('listing.urls'))
 }
-urlpatterns += {
-    path('contact/', include ('contact.urls'))
-}
-
 
 urlpatterns += [
     path('', RedirectView.as_view(url = 'listing/', permanent = True)),
