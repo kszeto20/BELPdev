@@ -16,6 +16,9 @@ def index(request):
         }
     return render(request, 'index.html', context = context)
 
+def about(request):
+    return render(request, "about.html")
+
 def contact(request):
   if request.method == 'POST':
     form = ContactForm(request.POST)
@@ -33,6 +36,8 @@ def contact(request):
     messages.error(request, "Error. Message not sent.")
   form = ContactForm()
   return render(request, "contacts.html", {'form':form})
+
+
 
 # Create your views here.
 
