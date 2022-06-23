@@ -6,10 +6,10 @@
       <p>Welcome to Bathroom Help, a website developed by <em> Kirsten, David, and Lillian</em>!</p>
       <div class = "d-flex flex-row">
         <div class = "d-flex p-2">
-          <button type="button" class="btn btn-outline-primary btn-lg"><a href="{% url 'bathrooms' %}">Find a Bathroom</button>
+          <a href="{% url 'bathrooms' %}" class="btn btn-outline-primary btn-lg" role="button">Find a Bathroom</a>
         </div>
         <div class = "d-flex p-2">
-          <button type="button" class="btn btn-outline-primary btn-lg">Add a Bathroom</button>
+          <a href="{% url 'add_bathroom' %}" class="btn btn-outline-primary btn-lg" role="button">Add a Bathroom</a>
         </div>
       </div>
     </div>
