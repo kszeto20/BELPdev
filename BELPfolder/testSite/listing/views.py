@@ -5,6 +5,7 @@ from .forms import ContactForm
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse
 from django.contrib import messages
+from .forms import BathroomForm
 
 def index(request):
     """view function for home page of site"""
@@ -37,7 +38,19 @@ def contact(request):
   form = ContactForm()
   return render(request, "contacts.html", {'form':form})
 
-
+def add_bathroom(request):
+  context ={}
+ 
+    # create object of form
+  form = BathroomForm(request.POST or None, request.FILES or None)
+     
+    # check if form data is valid
+  if form.is_valid():
+        # save the form data to model
+      form.save()
+ 
+  context['form']= form
+  return render(request, "add_bathroom.html", context)
 
 # Create your views here.
 
