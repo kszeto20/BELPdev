@@ -1,0 +1,39 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+	<div class = "bg-light d-flex flex-column vw-100 vh-100 align-items-center justify-content-center">
+		<h1>
+			Enter the Bathroom below!
+		</h1>
+		<form action="/signup" method="POST" class="bg-white p-5 mt-5 rounded-2 d-flex justify-content-stretch flex-column" style="width: 100%; max-width: 500px; grid-gap: 24px;">
+			<div class="d-flex flex-column align-items-left">
+				<label for="" class="text-left">Location:</label>
+				<input class="form-control" type="text" name="location">
+			</div>
+			<div class="">
+				<label for="">Gender:</label>
+				<input  class="form-control" type="text" name="gender">
+			</div>
+			<div class="">
+				<label for="">Size:</label>
+				<input  class="form-control" type="text" name="size">
+			</div>
+			<div class="">
+				<label for="">Cleanliness:</label>
+				<input  class="form-control" type="text" name="size">
+			</div>
+			<div class="">
+				<label for="">Overall Rating:</label>
+				<input  class="form-control" type="text" name="size">
+			</div>
+			<div class="">
+				<label for="">Ending Comments:</label>
+				<input  class="form-control" type="text" name="size">
+			</div>
+			<div class="d-flex justify-content-center" style="grid-gap: 12px;">
+				<a href="/listing">Submit</a>
+			</div>
+		</form>
+	</div>
+	{% endblock %}
