@@ -1,7 +1,10 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-<p><strong>Bathroom:</strong>{{ bathroom.location }}</p>
-<p><strong>Size:</strong>{{ bathroom.location }}</p>
-<p><strong>Cleanliness:</strong>{{ bathroom.cleanliness }}</p>
+<p><strong>Bathroom: </strong>{{ bathroom.location }}</p>
+<p><strong>Gender: </strong>{{ bathroom.gender}}</p>
+<p><strong>Size: </strong>{{ bathroom.size }}</p>
+<p><strong>Cleanliness: </strong>{{ bathroom.cleanliness }}</p>
+<p><strong>Overall Rating: </strong>{{ bathroom.rating}}</p>
+<p><strong>Ending Comments: </strong>{{ bathroom.comments}}</p>
 {% endblock %}

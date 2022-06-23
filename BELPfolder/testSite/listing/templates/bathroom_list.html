@@ -6,7 +6,7 @@
   <ul>
     {% for bathroom in bathroom_list %}
       <li>
-        bathNum: {{bathroom.bathNum}} <a href="{{ bathroom.get_absolute_url }}">{{ bathroom.location }}</a> Size: ({{bathroom.size}})
+        <a href="{{ bathroom.get_absolute_url }}">{{ bathroom.location }}</a>
       </li>
     {% endfor %}
   </ul>
